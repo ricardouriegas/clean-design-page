@@ -1,3 +1,6 @@
+# ADVISE 
+> Im changing this code, bc i was supose not to use AI, so im making it again
+
 # Clean Design Page
 Este proyecto es una página web de diseño minimalista (que destaca por su estética limpia y funcionalidad intuitiva). Utiliza HTML y CSS para crear una experiencia de usuario agradable y moderna, además de un poco de JavaScript para permitir el modo oscuro.
 
