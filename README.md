@@ -1,17 +1,22 @@
-# ADVISE 
-> Im changing this code, bc i was supose not to use AI, so im making it again
+# Mi Primera Página Web
 
-# Clean Design Page
-Este proyecto es una página web de diseño minimalista (que destaca por su estética limpia y funcionalidad intuitiva). Utiliza HTML y CSS para crear una experiencia de usuario agradable y moderna, además de un poco de JavaScript para permitir el modo oscuro.
+Este es un proyecto simple de HTML y CSS para practicar los conceptos básicos del desarrollo web.
 
-# Instalación
-Puedes ejecutar el proyecto [aquí](https://ricardouriegas.github.io/clean-design-page/) o seguir estos pasos para ejecutarlo localmente:
-1. Clona este repositorio:
-   ```bash
-   git clone https://github.com/ricardouriegas/clean-design-page.git
-   ```
-2. Navega al directorio del proyecto:
-   ```bash
-   cd clean-design-page
-   ```
-3. Abre el archivo `index.html` en tu navegador.
+## ¿Qué contiene?
+
+- Una página HTML con estructura semántica
+- Estilos CSS básicos
+- Secciones: Sobre mí, Galería y Contacto
+- Un formulario de contacto
+- Imágenes de ejemplo
+
+## Cómo ver la página
+
+1. Descarga los archivos `index.html` e `index.css`
+2. Colócalos en la misma carpeta
+3. Abre el archivo `index.html` en tu navegador web
+
+## Tecnologías utilizadas
+
+- HTML5
+- CSS3
