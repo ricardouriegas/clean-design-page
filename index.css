@@ -1,15 +1,62 @@
 /* Estilos básicos */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f4;
+    background: linear-gradient(-45deg, #f5f7fa, #e8edf2, #f0f4f8, #dce3eb);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
     margin: 0;
+}
+
+/* Animación de fondo sutil */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 /* Sections */
@@ -24,11 +71,16 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    animation: fadeInUp 0.8s ease-out;
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 /* Header */
 header {
-    background-color: #281704;
+    background: linear-gradient(135deg, #281704 0%, #3d2710 100%);
     color: white;
     padding: 20px;
     text-align: center;
@@ -37,6 +89,7 @@ header {
     align-items: center;
     justify-content: center;
     width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Banner sticky - se mantiene visible al hacer scroll */
@@ -81,6 +134,14 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
 }
 
 /* after nav */
@@ -117,30 +178,77 @@ h3 {
 }
 
 ul {
-    list-style-position: inside;
+    list-style: none;
     text-align: center;
     padding: 0;
+    margin: 0 auto;
+}
+
+ul li {
+    position: relative;
+    padding-left: 0;
+    margin-bottom: 8px;
+}
+
+ul li::before {
+    content: "•";
+    color: #666;
+    font-weight: bold;
+    margin-right: 8px;
 }
 
 img {
     max-width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Gallery images container */
-#galeria > div {
+img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor de galería con tres columnas */
+.galeria-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.galeria-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.galeria-center {
+    display: flex;
+    justify-content: center;
+}
+
+.galeria-center ul {
+    width: 100%;
+}
+
+.galeria-images {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     align-items: center;
-    align-content: flex-start;
+    width: 100%;
 }
 
-#galeria > div img {
+.galeria-images img {
     flex: 1 1 300px;
     max-width: 300px;
     object-fit: cover;
@@ -150,6 +258,43 @@ img {
 .galeria-container {
     position: relative;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.galeria-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.galeria-center {
+    display: flex;
+    justify-content: center;
+}
+
+.galeria-center ul {
+    width: 100%;
+}
+
+.galeria-images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.galeria-images img {
+    flex: 1 1 300px;
+    max-width: 300px;
+    object-fit: cover;
 }
 
 /* Nota flotante con position absolute */
@@ -165,6 +310,203 @@ img {
     font-weight: bold;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
     z-index: 10;
+}
+
+
+/* ========================================
+   SECCIÓN DE HABILIDADES
+======================================== */
+.skills-section {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+    color: #333;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.skills-section h2 {
+    color: #333;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.skills-container {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.skill-item {
+    margin-bottom: 25px;
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.skill-name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.skill-percentage {
+    font-weight: bold;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #555 0%, #888 100%);
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite;
+}
+
+/* ========================================
+   SECCIÓN DE PORTAFOLIO
+======================================== */
+.portfolio-section {
+    background-color: white;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    margin: 0;
+    border-radius: 0;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1);
+}
+
+.project-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.project-content h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #281704;
+}
+
+.project-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background-color: #f0f0f0;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    color: #555;
+    transition: all 0.2s ease;
+}
+
+.tag:hover {
+    background-color: #281704;
+    color: white;
+}
+
+/* ========================================
+   SECCIÓN DE ESTADÍSTICAS
+======================================== */
+.stats-section {
+    background: linear-gradient(135deg, #fafbfc 0%, #f0f2f5 100%);
+    color: #333;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.stats-section h2 {
+    color: #333;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.stat-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.stat-label {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
 }
 
 
@@ -199,17 +541,21 @@ input[type="text"], input[type="email"], textarea {
 button {
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #333;
+    background: linear-gradient(135deg, #333 0%, #555 100%);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 25px;
     cursor: pointer;
     /* animation fade */
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: #0c9c07; /* hover color */
+    background: linear-gradient(135deg, #0c9c07 0%, #0e7d06 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(12, 156, 7, 0.3);
 }
 
 /* Botón flotante scroll to top - position fixed */
@@ -242,7 +588,7 @@ button:hover {
 
 /* Footer */
 footer {
-    background-color: #281704;
+    background: linear-gradient(135deg, #281704 0%, #3d2710 100%);
     color: white;
     text-align: center;
     padding: 15px;
@@ -251,6 +597,7 @@ footer {
     justify-content: center;
     align-items: center;
     width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* ========================================
@@ -272,7 +619,12 @@ footer {
         margin: 0 10px;
     }
 
-    #galeria > div img {
+    .galeria-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .galeria-images img {
         flex: 1 1 250px;
         max-width: 250px;
     }
@@ -336,13 +688,18 @@ footer {
         margin-top: 15px;
     }
 
-    /* Galería en una columna */
-    #galeria > div {
+    /* Galería en columna */
+    .galeria-container {
         flex-direction: column;
         gap: 15px;
     }
 
-    #galeria > div img {
+    .galeria-images {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .galeria-images img {
         flex: 1 1 100%;
         max-width: 100%;
         width: 100%;
@@ -410,5 +767,18 @@ footer {
         bottom: 15px;
         right: 15px;
         font-size: 18px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .stat-number {
+        font-size: 36px;
     }
 }
