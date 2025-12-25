@@ -19,6 +19,11 @@ section {
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Header */
@@ -74,6 +79,12 @@ h3 {
     margin-top: 20px;
 }
 
+ul {
+    list-style-position: inside;
+    text-align: center;
+    padding: 0;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -103,23 +114,28 @@ img {
 form {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     justify-content: flex-start;
     max-width: 600px;
+    width: 100%;
 }
 
 label { /* nombre, email, mensaje */
     display: block;
     margin-top: 15px;
     font-weight: bold;
+    text-align: center;
+    width: 100%;
 }
 
 input[type="text"], input[type="email"], textarea {
     padding: 10px;
     margin-top: 5px;
     width: 100%;
+    max-width: 600px;
     border-radius: 20px;
     box-sizing: border-box;
+    text-align: center;
 }
 
 button {
