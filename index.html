@@ -8,6 +8,9 @@
 </head>
 <body>
     <header>
+        <div class="banner-sticky">
+            <p>Bienvenido a mi sitio web - Navega y explora</p>
+        </div>
         <h1>Mi Página Web</h1>
         <nav>
             <ul>
@@ -34,7 +37,8 @@
 
     <section id="galeria">
         <h2>Galería</h2>
-        <h3>Mis intereses</h3>
+        <div class="galeria-container">
+            <h3>Mis intereses</h3>
         <ul>
             <li>Programación</li>
             <li>Diseño web</li>
@@ -50,6 +54,7 @@
                     alt="Imagen 2">
             <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=200&fit=crop" 
                     alt="Imagen 3">
+            </div>
         </div>
     </section>
 
@@ -74,5 +79,7 @@
     <footer>
         <p>Todos los derechos reservados a nadie.</p>
     </footer>
+
+    <button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
 </body>
 </html>
